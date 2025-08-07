@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aneeqa Azim | Web Developer Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .left {
+      flex: 1 1 50%;
+      background-color: #232946;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #fffffe;
+    }
+
+    .left p {
+      font-size: 18px;
+      max-width: 500px;
+      color: #eaeaea;
+    }
+
+    .right {
+      flex: 1 1 50%;
+    }
+
+    .right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #b2b350;
+    }
+
+    section p {
+      font-size: 16px;
+      color: #dfdfdf;
+    }
+
+    .services ul, .skills ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .services li, .skills li {
+      padding: 10px 0;
+      font-size: 16px;
+      border-bottom: 1px solid #444;
+    }
+
+    .contact {
+      background-color: #f3f3f3;
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+      color: #121629;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px 8px;
+      padding: 10px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      background-color: #4caf50;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #b2b350;
+    }
+
+    .modal-content form input,
+    .modal-content form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .modal-content form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-content form button:hover {
+      background-color: #45a049;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: #121629;
+      cursor: pointer;
+    }
+
+    .success-message, .error-message {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    .success-message {
+      color: #4caf50;
+    }
+
+    .error-message {
+      color: #d32f2f;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        flex: 1 1 100%;
+        padding: 30px 20px;
+      }
+
+      .left h1 {
+        font-size: 32px;
+      }
+
+      .left p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 30px 20px;
+      }
+
+      .contact {
+        padding: 20px;
+        max-width: 100%;
+      }
+
+      .modal-content {
+        padding: 20px;
+        width: 95%;
+      }
+
+      .modal-content form input,
+      .modal-content form textarea {
+        font-size: 0.9rem;
+      }
+
+      .modal-content form button,
+      .btn {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Hi, I'm<br>Aneeqa Azim</h1>
+      <p>
+        Welcome to my portfolio! I'm a web developer and digital marketer skilled in HTML, CSS, PHP, and MySQL. I love building modern, responsive, and optimized websites that solve real-world problems.
+      </p>
+    </div>
+    <div class="right">
+      <img src="main.jpg" alt="Profile photo of Aneeqa Azim">
+    </div>
+  </div>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I'm Aneeqa, a passionate and detail-oriented Web Developer and Digital Marketer. I have a solid background in HTML, CSS, PHP, and MySQL.
+      <br><br>
+      My journey began with certified training in Web Development and Digital Marketing, and since then I've developed dynamic, mobile-friendly websites. I also have experience in graphic design including logos and banners.
+      <br><br>
+      I believe in creating clean, fast, and SEO-optimized designs that deliver both aesthetics and performance.
+    </p>
+  </section>
+
+  <section class="services">
+    <h2>What I Do</h2>
+    <ul>
+      <li>Custom Website Design & Development (HTML, CSS, PHP, MySQL)</li>
+      <li>Mobile-Responsive Layouts & Cross-Browser Compatibility</li>
+      <li>SEO Optimization & Digital Marketing Campaigns</li>
+      <li>Graphic Design (Logos, Posters, Social Media)</li>
+      <li>Performance Tuning & UI/UX Enhancements</li>
+    </ul>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5 & CSS3</li>
+      <li>PHP & MySQL</li>
+      <li>SEO & Digital Marketing</li>
+      <li>Graphic Design Tools</li>
+      <li>Responsive Web Design</li>
+      <li>UI/UX Principles</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <button class="btn" onclick="openModal()">📧 Contact Me</button>
+    <a class="btn" href="cv.html">📄 View CV</a>
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Contact Me</h2>
+        <form id="contactForm" action="https://formsubmit.co/aneeqaazim112@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New message from your portfolio!">
+          <input type="hidden" name="_template" value="box">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="success-message">Message sent successfully!</div>
+        <div class="error-message">Failed to send message. Please try again or verify your email.</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function openModal() {
+      document.getElementById('contactModal').style.display = 'flex';
+      document.querySelector('.success-message').style.display = 'none';
+      document.querySelector('.error-message').style.display = 'none';
+    }
+
+    function closeModal() {
+      document.getElementById('contactModal').style.display = 'none';
+      document.getElementById('contactForm').reset();
+      document.querySelector('.success-message').style.display = 'none';
+      document.querySelector('.error-message').style.display = 'none';
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch(this.action, { method: 'POST', body: new FormData(this) })
+        .then(response => {
+          if (response.ok) {
+            document.querySelector('.success-message').style.display = 'block';
+            document.querySelector('.error-message').style.display = 'none';
+            this.reset();
+            setTimeout(closeModal, 2000); // Close modal after 2 seconds
+          } else {
+            document.querySelector('.success-message').style.display = 'none';
+            document.querySelector('.error-message').style.display = 'block';
+          }
+        })
+        .catch(error => {
+          document.querySelector('.success-message').style.display = 'none';
+          document.querySelector('.error-message').style.display = 'block';
+        });
+    });
+  </script>
+</body>
+</html>
